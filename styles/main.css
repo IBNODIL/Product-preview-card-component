@@ -4,144 +4,131 @@
   box-sizing: border-box;
 }
 
+html, body{
+  font-family: sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
 body{
   background-color: hsl(30, 38%, 92%);
-  width: 100vw;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#card{
-  background-color: hsl(0, 0%, 100%);
+.for-mobile{
+  visibility: hidden;
+  position: absolute;
+}
+
+.container{
   width: 500px;
-  height: 350px;
-  border-radius: 10px;
-  display: flex;
-  overflow: hidden
-}
-
-#images{
-  min-width: 250px;
-  background-image: url(../images/image-product-desktop.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-#about{
-  padding: 25px 10px;
-}
-
-#name-product{
-  font-size: 10px;
-  padding: 10px;
-  padding-bottom: 5px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font-family: sans-serif;
-  font-weight: 500;
-  color: hsl(200, 15%, 55%);
-}
-
-#title-product{
-  line-height: 30px;
-  font-family: serif;
-  font-size: 32px;
-  font-weight: 700;
-}
-
-#subtitle-product{
-  font-size: 12px;
-  color: hsl(200, 15%, 55%);
-  line-height: 15px;
-  padding: 10px;
-  font-family: sans-serif;
-}
-
-#price{
+  background-color: hsl(0, 0%, 100%);
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-#new-price{
+.main-image{
+  width: 50%;
+}
+
+.main-text{
+  height: 375px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-text h5{
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: hsl(228, 12%, 48%);
+  margin-bottom: 10px;
+}
+
+.main-text h1{
+  font-size: 32px;
   font-family: serif;
-  font-size: 35px;
-  font-weight: 700;
+  line-height: 25px;
+  color: hsl(212, 21%, 14%);
+  margin-bottom: 10px;
+}
+
+.main-text p {
+  font-size: 14px;
+  color: hsl(228, 12%, 48%);
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+.cost{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cost h2{
+  font-size: 30px;
   color: hsl(158, 36%, 37%);
 }
 
-#old-price{
-  text-decoration: line-through;
-  color: hsl(200, 15%, 55%);
-  font-family: sans-serif;
+.cost del{
   font-size: 12px;
-  letter-spacing: 1px;
+  color: hsl(228, 12%, 48%);
 }
 
-#add-card{
-  margin: 20px 0;
+.btn-buy{
   width: 100%;
-  border-radius: 10px;
+  background-color: hsl(158, 36%, 37%);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: hsl(158, 36%, 37%);
-  color: white;
-  height: 40px;
-  cursor: pointer;
-  font-family: sans-serif;
+  padding: 10px 0;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: all 0.5s;
 }
 
-#add-card:active{
-  background-color: hsl(158, 36%, 30%);
-}
-
-#add-card svg{
+.btn-buy img{
+  height: 15px;
   margin-right: 10px;
 }
 
-#attribution{
-  position: absolute;
-  bottom: 20px;
-  color: hsl(220, 15%, 55%) ;
-}
-
 a{
-  color: hsl(220, 15%, 55%);
   text-decoration: none;
+  color: white;
 }
 
-@media only screen and (max-width: 600px) {
-  #card{
-    flex-direction: column;
-    height: auto;
-    width: 90%;
+.btn-buy:hover{
+  background-color: hsl(158, 36%, 22%);
+}
+
+@media only screen and (max-width: 600px){
+  .for-desktop{
+    visibility: hidden;
+    position: absolute;
   }
 
-  #attribution{
-    font-size: 15px;
-    bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-  }
-
-  #images{
+  .for-mobile{
     width: 100%;
-    min-height: 240px;
-    background-image: url(../images/image-product-mobile.jpg);
+    position: relative;
+    visibility: visible;
   }
 
-  #about{
-    margin-bottom: 10px;
-    padding-bottom: 10px;
+  .container{
+    flex-direction: column;
+    margin: 100px 0;
+    width: 80%;
+    border-radius: 8px;
   }
 
-  #add-card{
-    margin-bottom: 0;
-    padding-bottom: 0;
+  .main-text{
+    padding: 15px;
   }
 }
